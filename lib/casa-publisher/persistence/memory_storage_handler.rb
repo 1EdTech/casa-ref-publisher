@@ -6,23 +6,23 @@ module CASA
     module Persistence
       class MemoryStorageHandler
 
-        def initialize
+        def initialize options = nil
           @payloads = {}
         end
 
-        def create payload_hash
+        def create payload_hash, options = nil
           payload = CASA::Payload::TransitPayload.new payload_hash
           raise PayloadValidationError unless payload.validates?
           key = compute_key_from_identity payload.identity
           @payloads[key] = payload
         end
 
-        def get payload_identity
+        def get payload_identity, options = nil
           key = compute_key_from_identity payload_identity
           return @payloads.include?(key) ? @payloads[key] : false
         end
 
-        def get_all
+        def get_all options = nil
           return @payloads.values
         end
 
