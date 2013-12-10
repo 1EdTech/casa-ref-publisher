@@ -1,6 +1,6 @@
 require 'sinatra/base'
 require 'sinatra/json'
-require 'casa-publisher/storage/basic_handler'
+require 'casa-publisher/persistence/memory_storage_handler'
 
 module CASA
   module Publisher

@@ -4,7 +4,7 @@ require 'casa-publisher'
 
 # Use the basic storage handler for this example
 # In production, this should be a database-backed handler
-handler = CASA::Publisher::Storage::BasicHandler.new
+handler = CASA::Publisher::Persistence::MemoryStorageHandler.new
 
 # For the basic storage handler, load payloads from the data directory
 Dir.glob(Pathname.new(__FILE__).parent.realpath + "data/**/*.json").each do |payload_file|
@@ -13,7 +13,7 @@ Dir.glob(Pathname.new(__FILE__).parent.realpath + "data/**/*.json").each do |pay
     puts "[config.ru] Loaded #{payload_file}"
   rescue JSON::ParserError
     puts "[config.ru] Skipping #{payload_file} -- Invalid JSON"
-  rescue CASA::Publisher::Storage::BasicHandlerValidationError
+  rescue CASA::Publisher::Persistence::PayloadValidationError
     puts "[config.ru] Skipping #{payload_file} -- Invalid TransitPayload Structure"
   end
 end

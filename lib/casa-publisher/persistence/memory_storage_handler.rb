@@ -1,10 +1,10 @@
 require 'casa-payload'
-require 'casa-publisher/storage/basic_handler_validation_error'
+require 'casa-publisher/persistence/payload_validation_error'
 
 module CASA
   module Publisher
-    module Storage
-      class BasicHandler
+    module Persistence
+      class MemoryStorageHandler
 
         def initialize
           @payloads = {}
@@ -12,7 +12,7 @@ module CASA
 
         def create payload_hash
           payload = CASA::Payload::TransitPayload.new payload_hash
-          raise BasicHandlerValidationError unless payload.validates?
+          raise PayloadValidationError unless payload.validates?
           key = compute_key_from_identity payload.identity
           @payloads[key] = payload
         end
