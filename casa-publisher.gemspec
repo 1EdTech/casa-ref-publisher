@@ -11,6 +11,7 @@ Gem::Specification.new do |s|
   s.files       = ['lib/casa-publisher.rb']
 
   s.add_dependency 'sinatra'
+  s.add_dependency 'sinatra-contrib'
   s.add_dependency 'casa-payload'
 
   s.add_development_dependency 'rake'

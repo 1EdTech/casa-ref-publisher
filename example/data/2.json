@@ -1,0 +1,15 @@
+{
+    "identity": {
+        "originator_id": "1f262086-615f-11e3-bf13-d231feb1dc81",
+        "id": "ex2"
+    },
+    "original": {
+        "timestamp": "1970-01-01T00:00:01-00:00",
+        "uri": "http://example.com",
+        "share": true,
+        "propagate": true,
+        "use": {
+            "1f2625c2-615f-11e3-bf13-d231feb1dc81": "Sample Application 2"
+        }
+    }
+}
