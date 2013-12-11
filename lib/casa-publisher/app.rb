@@ -14,7 +14,12 @@ module CASA
 
       get '/payloads' do
 
-        error 406, "Not Acceptable" unless request.accept? '*/*'
+        begin
+          request.accept? 'application/json'
+        rescue
+          error 406, "Not Acceptable"
+        end
+
         error 501, "Not Implemented" unless @@storage_handler
 
         # NOTE: error 415 should be thrown if client processes body and unsupported request Content-Type
