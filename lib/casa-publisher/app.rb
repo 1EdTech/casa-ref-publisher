@@ -12,6 +12,10 @@ module CASA
         @@storage_handler = handler
       end
 
+      def self.storage_handler
+        @@storage_handler
+      end
+
       get '/payloads' do
 
         begin

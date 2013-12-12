@@ -1,5 +1,7 @@
 # CASA Publisher Module
 
+[![Build Status](https://travis-ci.org/AppSharing/casa-publisher.png)](https://travis-ci.org/AppSharing/casa-publisher)
+
 ## Setup
 
 Install gems via Bundler:
