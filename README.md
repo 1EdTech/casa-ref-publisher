@@ -1,6 +1,6 @@
 # CASA Publisher Module
 
-[![Build Status](https://travis-ci.org/AppSharing/casa-publisher.png)](https://travis-ci.org/AppSharing/casa-publisher)
+[![Build Status](https://travis-ci.org/AppSharing/casa-publisher.png)](https://travis-ci.org/AppSharing/casa-publisher) [![Dependency Status](https://gemnasium.com/AppSharing/casa-publisher.png)](https://gemnasium.com/AppSharing/casa-publisher) [![Code Climate](https://codeclimate.com/github/AppSharing/casa-publisher.png)](https://codeclimate.com/github/AppSharing/casa-publisher)
 
 ## Setup
 
