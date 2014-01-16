@@ -1,5 +1,5 @@
-require 'casa-payload'
-require 'casa-publisher/persistence/payload_validation_error'
+require 'casa/payload/transit_payload'
+require 'casa/publisher/persistence/payload_validation_error'
 
 module CASA
   module Publisher

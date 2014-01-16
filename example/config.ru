@@ -1,6 +1,6 @@
 require 'pathname'
 require 'json'
-require 'casa-publisher'
+require 'casa/publisher'
 
 # Use the basic storage handler for this example
 # In production, this should be a database-backed handler

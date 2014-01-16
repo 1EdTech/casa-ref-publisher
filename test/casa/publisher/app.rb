@@ -1,7 +1,7 @@
 require 'test/unit'
 require 'rack/test'
-require 'casa-payload'
-require 'casa-publisher/app'
+require 'casa/payload'
+require 'casa/publisher/app'
 
 class TestCASAPublisherApp < Test::Unit::TestCase
 
