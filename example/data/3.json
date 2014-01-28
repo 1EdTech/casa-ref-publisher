@@ -9,7 +9,7 @@
         "share": true,
         "propagate": true,
         "use": {
-            "1f2625c2-615f-11e3-bf13-d231feb1dc81": "Sample Propagated Application 2"
+            "1f2625c2-615f-11e3-bf13-d231feb1dc81": "Sample Propagated Application"
         }
     },
     "journal": [
@@ -17,7 +17,7 @@
             "originator_id": "1f262086-615f-11e3-bf13-d231feb1dc81",
             "timestamp": "1970-01-01T00:00:02-00:00",
             "use": {
-                "1f2625c2-615f-11e3-bf13-d231feb1dc81": "Sample Application 3 (originally propagated)"
+                "1f2625c2-615f-11e3-bf13-d231feb1dc81": "Sample Application (originally propagated)"
             }
         }
     ]
