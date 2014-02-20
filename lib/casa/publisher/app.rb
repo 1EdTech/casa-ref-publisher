@@ -47,7 +47,7 @@ module CASA
       end
 
       get '/payloads' do
-        call! env.merge("PATH_INFO" => '/transit/payloads')
+        call! env.merge("PATH_INFO" => '/out/payloads')
       end
 
     end
