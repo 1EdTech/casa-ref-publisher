@@ -25,7 +25,7 @@ module CASA
         @@storage_handler
       end
 
-      get '/payloads' do
+      get '/out/payloads' do
 
         begin
           request.accept? 'application/json'
@@ -44,6 +44,10 @@ module CASA
           payload
         }
 
+      end
+
+      get '/payloads' do
+        call! env.merge("PATH_INFO" => '/transit/payloads')
       end
 
     end
