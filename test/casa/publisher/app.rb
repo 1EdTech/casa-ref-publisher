@@ -38,7 +38,7 @@ class TestCASAPublisherApp < Test::Unit::TestCase
       CASA::Publisher::App.set_storage_handler false
       assert !CASA::Publisher::App.storage_handler
       get route
-      assert last_response.status == 501
+      assert last_response.status == 500
 
       temp_storage_handler = CASA::Publisher::Persistence::MemoryStorageHandler.new
 
