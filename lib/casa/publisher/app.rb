@@ -1,6 +1,6 @@
 require 'sinatra/base'
 require 'casa/publisher/persistence/memory_storage_handler'
-require 'casa/publisher/strategy/sinatra'
+require 'casa/publisher/strategy/all/sinatra'
 
 module CASA
   module Publisher
@@ -36,7 +36,7 @@ module CASA
 
       get '/out/payloads' do
 
-        handler = CASA::Publisher::Strategy::Sinatra.new self,
+        handler = CASA::Publisher::Strategy::All::Sinatra.new self,
           'from_handler' => @@storage_handler,
           'postprocess_handler' => @@postprocess_handler
 
