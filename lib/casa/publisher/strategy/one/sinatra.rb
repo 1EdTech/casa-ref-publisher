@@ -22,7 +22,7 @@ module CASA
 
           end
 
-          def validate_request_content!
+          def process_request!
 
             super
 

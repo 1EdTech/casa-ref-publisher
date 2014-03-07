@@ -1,4 +1,5 @@
 require 'casa/publisher/strategy/base/base'
+require 'json'
 
 module CASA
   module Publisher
@@ -7,17 +8,20 @@ module CASA
         class Sinatra < Base
 
           attr_reader :app
+          attr_reader :request_body
 
           def initialize app, options = {}
 
             super options
             @app = app
+            @request_body = nil
 
           end
 
           def execute
 
             validate_request!
+            process_request!
 
             yield if block_given?
 
@@ -27,8 +31,6 @@ module CASA
 
             validate_implementation!
             validate_request_accept!
-            validate_request_content_type!
-            validate_request_content!
 
           end
 
@@ -37,27 +39,65 @@ module CASA
             begin
               app.request.accept? 'application/json'
             rescue
-              app.error 406, "Not Acceptable"
+              app.error 406, 'Not Acceptable'
             end
 
           end
 
           def validate_implementation!
 
-            app.error 501, "Not Implemented" unless @from_handler
+            app.error 500, 'Not Implemented' unless @from_handler
 
           end
 
-          def validate_request_content_type!
+          def process_request!
 
-            # NOTE: error 415 should be thrown if client processes body and unsupported request Content-Type
+            app.request.body.rewind
+
+            body = app.request.body.read.strip
+            if body.length == 0 and app.params[:body]
+              body = app.params[:body].strip
+            end
+
+            if body.length > 0
+              set_request_body body
+            else
+              @request_body = nil
+            end
 
           end
 
-          def validate_request_content!
+          private
 
-            # NOTE: error 400 should be thrown if client processes body and it is malformed per the Content-Type
-            # NOTE:
+          def set_request_body body
+
+            case app.request.content_type
+
+              when 'application/json',                  # CASA-specified value (should)
+                   'application/x-www-form-urlencoded', # default XHR value (may)
+                   nil                                  # default XHR value (may)
+
+                set_json_request_body body
+
+              else
+
+                app.error 415, 'Unsupported media type'
+
+            end
+
+          end
+
+          def set_json_request_body body
+
+            begin
+
+              @request_body = JSON.parse body
+
+            rescue ::JSON::ParserError
+
+              app.error 400, 'Bad Request'
+
+            end
 
           end
 
