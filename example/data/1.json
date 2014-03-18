@@ -1,15 +1,41 @@
 {
-    "identity": {
-        "originator_id": "1f262086-615f-11e3-bf13-d231feb1dc81",
-        "id": "ex1"
-    },
-    "original": {
-        "timestamp": "1970-01-01T00:00:01-00:00",
-        "uri": "http://example.com",
-        "share": true,
-        "propagate": true,
-        "use": {
-            "1f2625c2-615f-11e3-bf13-d231feb1dc81": "Sample Application 1"
+  "identity": {
+    "originator_id": "1f262086-615f-11e3-bf13-d231feb1dc82",
+    "id": "ex1"
+  },
+  "original": {
+    "timestamp": "1970-01-01T00:00:01-00:00",
+    "uri": "http://example.com",
+    "share": true,
+    "propagate": true,
+    "use": {
+      "1f2625c2-615f-11e3-bf13-d231feb1dc81": "Sample Application 1",
+      "d59e3a1f-c034-4309-a282-60228089194e": [
+        {
+          "name": "Author 1",
+          "email": "athor1@example.edu"
+        },
+        {
+          "name": "Author 2",
+          "email": "author2@example.edu"
         }
+      ],
+      "c80df319-d5da-4f59-8ca3-c89b234c5055": [
+        "cat1",
+        "cat2"
+      ],
+      "b7856963-4078-4698-8e95-8feceafe78da": "This is an example of an application published by a peer.",
+      "a7e923e5-8da3-46d9-a3e8-aeda4ac8e6d5": false,
+      "273c148d-de83-499e-b554-4cac9b262ab6": {
+        "name": "Example University",
+        "shortname": "ExU",
+        "website": "http://example.edu"
+      },
+      "c6e33506-b170-475b-83e9-4ecd6b6dd42a": [
+        "tag1",
+        "tag2",
+        "tag3"
+      ]
     }
+  }
 }
