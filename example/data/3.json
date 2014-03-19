@@ -1,24 +1,32 @@
 {
-    "identity": {
-        "originator_id": "1f262087-615f-11e3-bf13-d231feb1dc82",
-        "id": "prop1"
-    },
-    "original": {
-        "timestamp": "1970-01-01T00:00:01-00:00",
-        "uri": "http://example.com",
-        "share": true,
-        "propagate": true,
-        "use": {
-            "1f2625c2-615f-11e3-bf13-d231feb1dc81": "Sample Application from Elsewhere"
-        }
-    },
-    "journal": [
-        {
-            "originator_id": "1f262086-615f-11e3-bf13-d231feb1dc83",
-            "timestamp": "1970-01-01T00:00:02-00:00",
-            "use": {
-                "1f2625c2-615f-11e3-bf13-d231feb1dc81": "Propagated Application"
-            }
-        }
-    ]
+  "identity": {
+    "originator_id": "1f262087-615f-11e3-bf13-d231feb1dc82",
+    "id": "prop1"
+  },
+  "original": {
+    "timestamp": "1970-01-01T00:00:01-00:00",
+    "uri": "http://example.com",
+    "share": true,
+    "propagate": true,
+    "use": {
+      "1f2625c2-615f-11e3-bf13-d231feb1dc81": "Sample Application from Elsewhere",
+      "c6e33506-b170-475b-83e9-4ecd6b6dd42a": [
+        "tag2"
+      ]
+    }
+  },
+  "journal": [
+    {
+      "originator_id": "1f262086-615f-11e3-bf13-d231feb1dc83",
+      "timestamp": "1970-01-01T00:00:02-00:00",
+      "use": {
+        "1f2625c2-615f-11e3-bf13-d231feb1dc81": "Propagated Application",
+        "c80df319-d5da-4f59-8ca3-c89b234c5055": [
+          "cat1",
+          "cat3"
+        ],
+        "a7e923e5-8da3-46d9-a3e8-aeda4ac8e6d5": true
+      }
+    }
+  ]
 }
